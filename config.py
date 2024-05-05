@@ -1,6 +1,8 @@
 import os
 import random
 
+from enums import DATA_CLASSIFIER_METHOD_TYPE
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 CLASSIFICATION_TRAINING_DATASET_PATH = '/data/fruit_data_with_colors.txt'
@@ -21,3 +23,5 @@ KAFKA_CONFIG = {
 }
 
 KAFKA_TOPIC_NAME = 'fruits'
+
+DATA_CLASSIFIER_METHOD = DATA_CLASSIFIER_METHOD_TYPE.K_NEAREST_NEIGHBOURS

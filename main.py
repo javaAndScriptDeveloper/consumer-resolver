@@ -1,7 +1,7 @@
 import json
 
 import config
-from classification import DataClassifier
+from classification import get_classifier
 from kafka_messaging.consumer import DataConsumer
 
 def process_data(data_json):
@@ -9,7 +9,7 @@ def process_data(data_json):
 
     data_list = [data_dict[i] for i in config.CLASSIFICATION_PROPERTY_NAMES]
 
-    data_type = DataClassifier.get_instance().serve(data_list)
+    data_type = get_classifier().serve(data_list)
 
     action = config.TYPE_ACTION_DICT.get(data_type)
     if action is not None:
